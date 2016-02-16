@@ -1,93 +1,51 @@
 # InSpy
 
-A python based LinkedIn employee enumerator. This script is great for social engineering assessments where clients ask one
-to provide employee emails.
+##Introduction
+-----
 
-### Help
+InSpy is a python based LinkedIn enumeration tool. Inspy has two functionalities: TechSpy and EmpSpy.
+
+- TechSpy - Crawls LinkedIn job listings for technlogoies used by the provided company. InSpy attempts to identify technologies by matching job descriptions to keywords from a new line delimited file.
+
+- EmpSpy - Crawls LinkedIn for employees working at the provided company. InSpy searches for employees by title and/or departments from a new line delimited file. InSpy may also create emails for the identified employees if the user specifies an email format.
+
+## Installation
+-----
+
+Run `pip install -r requirements.txt` within the cloned InSpy directory.
+
+## Usage
+-----
 
 ```
-InSpy - A LinkedIn employee enumerator by Jonathan Broche (@g0jhonny)
+InSpy - A LinkedIn enumeration tool by Jonathan Broche (@g0jhonny)
+
+positional arguments:
+  company               Company name to use for tasks.
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c COMPANY, --company COMPANY
-                        Company name
-  -d [DEPT], --dept [DEPT]
-                        Department or title to query employees against. Inspy
-                        searches through a predefined list by default.
-  -e EMAILFORMAT, --emailformat EMAILFORMAT
-                        Email output format. Acceptable formats:
-                        first.last@xyz.com, last.first@xyz.com, flast@xyz.com,
-                        lastf@xyz.com
-  -i [INPUTFILENAME], --inputfilename [INPUTFILENAME]
-                        File with list of departments or titles to query
-                        employees against (one item per line)
-  -o [OUTFILENAME], --outfilename [OUTFILENAME]
-                        Output results to text file
-```
-### Examples
+  -v, --version         show program's version number and exit
 
-```
-./InSpy.py -c "acme corp"
+Technology Search:
+  --techspy [file]      Crawl LinkedIn job listings for technologies used by
+                        the company. Technologies imported from a new line
+                        delimited file. [Default: tech-list-small.txt]
+  --limit int           Limit the number of job listings to crawl. [Default:
+                        50]
 
- --------------------------------------------------------------------------
- InSpy v1.0 - LinkedIn User Enumerator by Jonathan Broche (@g0jhonny)
- --------------------------------------------------------------------------
- 
-[*] Searching for employees working at acme corp with 'sales' in their title
-[*] Searching for employees working at acme corp with 'hr' in their title
-[*] Searching for employees working at acme corp with 'marketing' in their title
-[*] Searching for employees working at acme corp with 'finance' in their title
-[*] Searching for employees working at acme corp with 'accounting' in their title
-[*] Searching for employees working at acme corp with 'director' in their title
-[*] Searching for employees working at acme corp with 'administrative' in their title
-[*] Searching for employees working at acme corp with 'lawyer' in their title
-[*] Searching for employees working at acme corp with 'it' in their title
-[*] Searching for employees working at acme corp with 'security' in their title
+Employee Harvesting:
+  --empspy [file]       Discover employees by title and/or department. Titles
+                        and departments are imported from a new line delimited
+                        file. [Default: title-list-small.txt]
+  --emailformat string  Create email addresses for discovered employees using
+                        a known format. [Accepted Formats: first.last@xyz.com,
+                        last.first@xyz.com, firstl@xyz.com, lfirst@xyz.com,
+                        flast@xyz.com, lastf@xyz.com, first@xyz.com,
+                        last@xyz.com]
 
-
-[*] Proud Arkie Accounts Receivable specialist at Acme Corp.
-[*] Brian Russo Finance Manager at Acme corp
-[*] Paul Samuelson Director of Customer Support at ACME Corp. Production Resources
-[*] Steve Smith Developer at Acme Corp
-[*] Sarah Rhodes Director of Sales at Acme Corp
-[*] Frances Jones Assistant to the Director at Acme Corp
- ...snip...
-
-[*] Done! 29 employees found.
-[*] Completed in 28.7s
-```
-
-Provide InSpy with the email format of the respective corporation and it'll output the emails for you.
-
-```
-./InSpy.py -c 'acme corp' -e flast@acme.com
-
- --------------------------------------------------------------------------
- InSpy v1.0 - LinkedIn User Enumerator by Jonathan Broche (@g0jhonny)
- --------------------------------------------------------------------------
- 
-[*] Searching for employees working at acme corp with 'sales' in their title
-[*] Searching for employees working at acme corp with 'hr' in their title
-[*] Searching for employees working at acme corp with 'marketing' in their title
-[*] Searching for employees working at acme corp with 'finance' in their title
-[*] Searching for employees working at acme corp with 'accounting' in their title
-[*] Searching for employees working at acme corp with 'director' in their title
-[*] Searching for employees working at acme corp with 'administrative' in their title
-[*] Searching for employees working at acme corp with 'lawyer' in their title
-[*] Searching for employees working at acme corp with 'it' in their title
-[*] Searching for employees working at acme corp with 'security' in their title
-
-
-[*] Proud Arkie, Accounts Receivable specialist at Acme Corp., parkie@acme.com
-[*] Brian Russo, Finance Manager at Acme corp, brusso@acme.com
-[*] Paul Samuelson, Director of Customer Support at ACME Corp. Production Resources, psamuelson@acme.com
-[*] Steve Smith, Developer at Acme Corp, ssmith@acme.com
-[*] Sarah Rhodes, Director of Sales at Acme Corp, srhodes@acme.com
-[*] Frances Jones, Assistant to the Director at Acme Corp, fjones@acme.com
- ...snip...
-
-[*] Done! 29 employees found.
-[*] Completed in 29.0s
-
+Output Options:
+  --html file           Print results in HTML file.
+  --csv file            Print results in CSV format.
+  --json file           Print results in JSON.
 ```

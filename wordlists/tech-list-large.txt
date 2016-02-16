@@ -1,0 +1,55 @@
+c#
+ruby
+python
+cms
+azure
+java
+javascript
+cisco
+asa
+meraki
+apache
+iis
+sql
+mysql
+windows
+linux
+unix
+apple
+adobe
+android
+blackberry
+broadband
+cloud
+computing
+dropbox
+ebay
+exchange
+postfix
+sendmail
+encryption
+filesharing
+microsoft
+mobile
+oracle
+juniper
+avaya
+software
+sunos
+as400
+mainframe
+bluecoat
+siem
+intrusion prevention
+intrusion detection
+ids
+ips
+web proxy
+web filter
+antivirus
+anti virus
+dlp
+endpoint detection
+mobile security
+active directory
+vmware
