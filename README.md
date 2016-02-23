@@ -14,7 +14,7 @@ InSpy is a python based LinkedIn enumeration tool. Inspy has two functionalities
 
 Run `pip install -r requirements.txt` within the cloned InSpy directory.
 
-## Usage
+## Help
 -----
 
 ```
