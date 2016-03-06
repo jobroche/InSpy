@@ -7,7 +7,7 @@ from lib.workbench import *
 from lib.crawler import *
 import os, argparse, sys, time
 
-parser = argparse.ArgumentParser(description='InSpy - A LinkedIn enumeration tool by Jonathan Broche (@g0jhonny)', version="2.0")
+parser = argparse.ArgumentParser(description='InSpy - A LinkedIn enumeration tool by Jonathan Broche (@g0jhonny)', version="2.0.1")
 parser.add_argument('company', help="Company name to use for tasks.")    
 techgroup = parser.add_argument_group(title="Technology Search")
 techgroup.add_argument('--techspy', metavar='file', const="wordlists/tech-list-small.txt", nargs='?', help="Crawl LinkedIn job listings for technologies used by the company. Technologies imported from a new line delimited file. [Default: tech-list-small.txt]")
