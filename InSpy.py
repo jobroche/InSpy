@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# Copyright (c) 2016 Jonathan Broche (@g0jhonny)
 
 from lib.logger import *
 from lib.soupify import *
@@ -33,7 +34,7 @@ if not args.techspy and not args.empspy:
     sys.exit(1)
 
 stime = time.time()
-tech_html, employee_html, tech_csv, employee_csv, employee_json = [], [], [], [], []
+tech_html, employee_html, tech_csv, employee_csv, tech_json, employee_json = [], [], [], [], [], []
 
 if args.techspy:
     if os.path.exists(os.path.abspath(args.techspy)):
