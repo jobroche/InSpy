@@ -1,5 +1,4 @@
-#todo: fix special character output
-import re, json, os, csv, time, codecs
+import re, json, os, csv, time, codecs, HTMLParser
 from logger import *
 
 def identify_tech(data, file):
@@ -43,6 +42,7 @@ def craft_tech(matches):
 	return html_out, csv_out, json_out
 
 def craft_employees(employees, eformat):
+	hparser=HTMLParser.HTMLParser()
 	html_out, csv_out, json_out = [], [], []
 	emails = {}
 	if eformat:
@@ -50,13 +50,22 @@ def craft_employees(employees, eformat):
 		domain = eformat[eformat.find('@'):]
 
 		for name in employees.keys():
-			first = [n.split() for n in name.split(',',1)][0][0]
-			last = [n.split() for n in name.split(',',1)][0][-1]
+			try:
+				first = hparser.unescape([n.split() for n in name.split(',',1)][0][0])
+				last = hparser.unescape([n.split() for n in name.split(',',1)][0][-1])
+			except UnicodeDecodeError:
+				first = [n.split() for n in name.split(',',1)][0][0]
+				last = [n.split() for n in name.split(',',1)][0][-1]
 			email = "{}{}".format(format_email(format, first.lower(), last.lower()), domain)
 			if email:
 				emails[name] = email
 
 	for name, title in employees.items():
+		try:
+			name = hparser.unescape(name)
+			title = hparser.unescape(title)
+		except UnicodeDecodeError:
+			pass
 		presults("{} {}".format(name, title[:50].replace('&amp;', '&')))
 		logging.info("Employees identified: {}".format(employees))
 
