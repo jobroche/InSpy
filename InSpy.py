@@ -85,7 +85,7 @@ if args.empspy:
         pstatus("{} Employees identified".format(len(employees.keys())))
         if employees:
             if args.emailformat:
-                if args.emailformat[:args.emailformat.find('@')] in ['first.last', 'last.first', 'firstlast', 'lastfirst', 'first', 'last', 'firstl', 'lfirst', 'flast', 'lastf']:
+                if args.emailformat[:args.emailformat.find('@')] in ['first.last', 'last.first', 'firstlast', 'lastfirst', 'first_last', 'last_first', 'first', 'last', 'firstl', 'lfirst', 'flast', 'lastf']:
                     employee_html, employee_csv, employee_json = craft_employees(employees, args.emailformat)
                 else:
                     pwarning("You didn't provide a valid e-mail format. See help (-h) for acceptable formats.")

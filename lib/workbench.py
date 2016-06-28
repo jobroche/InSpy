@@ -95,6 +95,8 @@ def format_email(format, first, last):
 			'last.first': '{}.{}'.format(last,first),
 			'firstlast': '{}{}'.format(first,last),
 			'lastfirst': '{}{}'.format(last,first),
+			'first_last': '{}_{}'.format(first,last),
+			'last_first': '{}_{}'.format(last,first),
 			'firstl':'{}{}'.format(first,last[0]),
 			'lfirst':'{}{}'.format(last[0],first), 
 			'flast': '{}{}'.format(first[0],last),
