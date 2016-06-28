@@ -40,7 +40,8 @@ Employee Harvesting:
                         file. [Default: title-list-small.txt]
   --emailformat string  Create email addresses for discovered employees using
                         a known format. [Accepted Formats: first.last@xyz.com,
-                        last.first@xyz.com, firstl@xyz.com, lfirst@xyz.com,
+                        last.first@xyz.com, first_last@xyz.com, last_first@xyz.com, 
+                        firstl@xyz.com, lfirst@xyz.com,
                         flast@xyz.com, lastf@xyz.com, first@xyz.com,
                         last@xyz.com]
 
