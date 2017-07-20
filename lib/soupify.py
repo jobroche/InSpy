@@ -14,7 +14,7 @@ def soupify(response):
 def get_employees(soup):
     try:
         employees = {}
-        for n, t in zip(soup.findAll('h3', { "class" : "name" }), soup.findAll('p', { "class" : "headline" })):
+        for n, t in zip(soup.findAll('a', {"class": "professional__name"}), soup.findAll("p", {"class" : "professional__headline"})):
             name = u''.join(n.getText()).encode('utf-8')
             title = u''.join(t.getText()).encode('utf-8')
             if name and title:
@@ -29,7 +29,7 @@ def get_employees(soup):
 def get_job_links(soup, company):
     try:
         job_links = []
-        for link, comp in zip(soup.findAll('a', { "class" : "job-title-link" }), soup.findAll('span', { "class" : "company-name-text" })):
+        for link, comp in zip(soup.findAll('a', { "class" : "job-title" }), soup.findAll('span', { "class" : "company-name-text" })):
             if comp.text == company:
                 job_links.append(u''.join(link['href']).encode('utf-8'))
         return job_links
