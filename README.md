@@ -18,7 +18,7 @@ Run `pip install -r requirements.txt` within the cloned InSpy directory.
 -----
 
 ```
-InSpy - A LinkedIn enumeration tool by Jonathan Broche (@g0jhonny)
+InSpy - A LinkedIn enumeration tool by Jonathan Broche (@jonathanbroche)
 
 positional arguments:
   company               Company name to use for tasks.
