@@ -1,6 +1,6 @@
 # InSpy
 
-##Introduction
+## Introduction
 -----
 
 InSpy is a python based LinkedIn enumeration tool. Inspy has two functionalities: TechSpy and EmpSpy.
