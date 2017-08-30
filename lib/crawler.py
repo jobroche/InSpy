@@ -2,7 +2,7 @@ from logger import *
 import requests
 requests.packages.urllib3.disable_warnings()
 
-headers={'Host':'www.linkedin.com', 'User-Agent': '	Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
+headers={'Host':'www.linkedin.com', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
 
 
 def crawl_employees(company, file):
