@@ -1,45 +1,304 @@
-chairman
-president
-executive
-deputy
-manager
-staff
-chief
-director
-partner
-owner
-treasurer
-secretary
-associate
-supervisor
-foreman
-counsel
-consultant
-recruiter
-human resources
-hr
-payroll
-administrator
-training
-coordinator
-therapist
-nurse
-pharmacist
-pathologist
-occupational
-marketing
-product
-development
-senior
-project
-software
-developer
-analyst
-engineer
-technician
+.net developer
+accessibility specialist
 accountant
-controller
-financial
+administrator
+agile business analyst
+agile coach
+agile project manager
+analyst
+analytics specialist
+application developer
+application manager
+application support analyst
+application support engineer
+applications engineer
+associate
+associate developer
 auditor
-tax
+billing analyst
+build engineer
+build manager
+business analyst
+business architect
+business intelligence engineer
+business relationship manager
+business systems analyst
+chairman
+change manager
+chief architect
+CEO
+chief executive officer
+CIO
+chief information officer
+CSO
+chief security officer
+CTO
+chief technology officer
+cloud architect
+cloud consultant
+cloud product and project manager
+cloud services developer
+cloud software and network engineer
+cloud system administrator
+cloud system engineer
+communication systems design manager
+computer and information research scientist
+computer and information systems manager
+computer and related services manager
+computer application development manager
+computer applications manager
+computer department co-ordinator
+computer development division head
+computer facility manager
+computer graphics animator
+computer legacy systems manager
+computer manager
+computer network architect
+computer networks manager
+computer programmer
+computer programs manager
+computer projects manager
+computer software design manager
+computer system operations manager
+computer systems analyst
+computer systems development manager
+computer systems manager
+computerized information systems manager
+computerized technical information manager
+configuration manager
+consultant
+content manager
+content strategist
+contracts manager
+controller
+coordinator
+counsel
+customer support administrator
+customer support specialist
+data analyst
+data architect
+data center manager
+data center support specialist
+data center system administrator
+data centre manager
+data migration architect
+data modeler
+data processing and systems analysis manager
+data processing director
+data processing manager
+data processing planning manager
+data quality manager
+data scientist
+DBA
+database administrator
+database analyst
+database developer
+deputy
+desktop support manager
+desktop support specialist
+desktop support technician
+developer
+development
+devops manager
+digital marketing manager
+director
+director of delivery
+director of information systems
+director of operations
+director of technology
+director of technology management
+disaster recovery specialist
+electronic data processing manager
+EDP manager
+electronic data processing (EDP) manager
+engagement director
+engineer
+enterprise architect
+enterprise solutions architect
+erp analyst
+executive
+financial
+foreman
+frameworks specialist
+front end developer
+front-end designer
+front-end developer
+full-stack developer
+game architect
+game designer
+game developer
+graphic designer
+growth hacker
+help desk specialist
+help desk technician
+hr
+human resources
+information architect
+information assurance engineer
+information security architect
+information systems development director
+information systems manager
+information systems operations director
+information technology development manager
+information technology director
+information technology implementation manager
+information technology integration manager
+infrastructure manager
+integration architect
+interaction designer
+Internet systems administrator
+IT analyst
+IT auditor
+IT coordinator
+IT development manager
+IT director
+IT implementation manager
+IT integration manager
+IT manager
+IT risk manager
+IT support manager
+IT support specialist
+IT systems administrator
+java developer
+junior software engineer
+lead developer
+management information system manager
+management information systems director
+manager
+marketing
+marketing technologist
+MIS director
+MIS manager
+mobile app developer
+mobile developer
+network administrator
+network analyst
+network and computer systems administrator
+network architect
+network design manager
+network engineer
+network security architect
+network systems administrator
+nurse
+occupational
+operations analyst
+outsourcing manager
+owner
+partner
+pathologist
+payroll
+pharmacist
+president
+process analyst
+product
+product manager
+program manager
+programmer
+programmer analyst
+project
+project manager
+python developer
+QA specialist
+quality assurance specialist
+quality assurance manager
+recruiter
+ruby on rails developer
+sales engineer
+secretary
 security
+security engineer
+security specialist
+security testing engineer
+senior applications engineer
+senior database administrator
+senior network architect
+senior network engineer
+senior network system administrator
+senior programmer
+senior programmer analyst
+senior security specialist
+senior software engineer
+senior support specialist
+senior system administrator
+senior system analyst
+senior system architect
+senior system designer
+senior systems analyst
+senior systems software engineer
+senior web administrator
+senior web developer
+seo consultant
+service delivery manager
+service desk operator
+social media manager
+software
+software architect
+software developer
+software developers
+software development manager
+software development managers
+software engineer
+software engineering director
+software engineering manager
+software quality assurance analyst
+solution architect
+sql developer
+sr. applications engineer
+sr. database administrator
+sr. network architect
+sr. network engineer
+sr. network system administrator
+sr. programmer
+sr. programmer analyst
+sr. security specialist
+sr. software engineer
+sr. support specialist
+sr. system administrator
+sr. system analyst
+sr. system architect
+sr. system designer
+sr. systems analyst
+sr. systems software engineer
+sr. web administrator
+sr. web developer
+storage engineer
+supervisor
+support specialist
+system architect
+systems - computer systems manager
+systems administrator
+systems analyst
+systems designer
+systems development - computer systems manager
+systems development manager
+systems engineer
+systems implementation manager
+systems integration manager
+systems manager
+systems operations manager
+systems software engineer​
+technical account manager
+technical lead
+technical operations officer
+technical specialist
+technical support engineer
+technical support representative
+technical support specialist
+technician
+technology architect
+telecommunications specialist
+test analyst
+test automation engineer
+therapist
+training
+treasurer
+ui architect
+ui designer
+ux designer
+virtualization architect
+web administrator
+web analytics developer
+web designer
+web developer
+webmaster
+wordpress developer
