@@ -142,6 +142,7 @@ def craft_html(company, tech_html, employee_html, filename):
 	page = """
 	<html>
 	<head><title>InSpy - {company}</title>
+	<meta charset="UTF-8">
 	</head>
 	<body style='font-family: arial, sans-serif; font-size: 14px; margin: 10px 0 0 20px;'>
 	<h2>InSpy</h2>
