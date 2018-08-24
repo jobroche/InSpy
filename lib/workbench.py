@@ -33,7 +33,6 @@ def get_domain(company): #Clearbit API - clearbit.com
 
 
 def get_email_format(domain, apikey): #HunterIO API - hunter.io
-
 	hunter_request = "https://api.hunter.io/v2/domain-search?domain={domain}&api_key={api}".format(domain=domain, api=apikey)
 	emailformat = ""
 
@@ -88,7 +87,7 @@ def create_emails(employees, domain, eformat):
 			last = [n.split() for n in name.split(',',1)][0][-1]
 		
 		#create emails
-		email = "{}@{}".format(format_email(eformat, first.lower(), last.lower()), domain)
+		email = "{}@{}".format(format_email(eformat.split("@")[0], first.lower(), last.lower()), domain)
 
 		if email:
 			emails[name] = email
@@ -96,7 +95,7 @@ def create_emails(employees, domain, eformat):
 	if emails:
 		return emails
 		
-def format_email(format, first, last):
+def format_email(eformat, first, last):
 	try:
 		formats = {
 			'first.last': '{}.{}'.format(first,last),
@@ -112,6 +111,6 @@ def format_email(format, first, last):
 			'first': first,
 			'last': last
 		}
-		return formats[format]
+		return formats[eformat]
 	except Exception as e:
 		print e

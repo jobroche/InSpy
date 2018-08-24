@@ -1,4 +1,4 @@
-import json, os, xml.dom.minidom, time
+import json, os, xml.dom.minidom, time, csv
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 def output(format, file, company, domain, employees, emails):
