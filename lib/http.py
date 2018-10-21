@@ -1,3 +1,4 @@
+from __future__ import print_function
 
 import requests, random
 from logger import *
@@ -27,7 +28,7 @@ def http_request(url):
 			return {"status": r.status_code, "response": ""}
 
 	except requests.exceptions.Timeout as e:
-		print "Error: Timed out."
+		print("Error: Timed out.")
 		logging.error(e)
 	except Exception as e:
 		logging.error(e)

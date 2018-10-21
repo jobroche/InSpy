@@ -1,6 +1,7 @@
 #!/usr/bin/env python2
 # Copyright (c) 2018 Jonathan Broche (@LeapSecurity)
 
+from __future__ import print_function
 import argparse, sys, os
 from lib.http import *
 from lib.workbench import *
@@ -32,7 +33,7 @@ email = args.email
 domain = args.domain
 
 
-print "\nInSpy {}".format(parser.version)
+print("\nInSpy {}".format(parser.version))
 
 try:
 	if domain and not email: #search hunterio for email format
@@ -48,7 +49,7 @@ try:
 
 		email = email.replace("{", "").replace("}","")
 
-		print "\nDomain: {}, Email Format: {}\n".format(domain, email)
+		print("\nDomain: {}, Email Format: {}\n".format(domain, email))
 
 		employees = {}
 
@@ -58,15 +59,15 @@ try:
 					if args.company.lower() in title.lower():
 						if not name in employees:
 							employees[name] = title
-			print "\n{} Employees identified".format(len(employees.keys()))
+			print("\n{} Employees identified".format(len(employees.keys())))
 		else:
-			print os.path.abspath(args.titles)
-			print "No such file or directory: '{}'".format(args.titles)
+			print(os.path.abspath(args.titles))
+			print("No such file or directory: '{}'".format(args.titles))
 
 		if employees:
 			#output employees
 			for name, title in employees.iteritems():
-				print "{} {}".format(name, title[:50].replace('&amp;', '&'))
+				print("{} {}".format(name, title[:50].replace('&amp;', '&')))
 			
 			#craft emails
 			emails = create_emails(employees, domain, email)
@@ -74,9 +75,9 @@ try:
 
 			if emails:
 				#output emails
-				print "\nEmails crafted\n".format(len(emails.keys()))
+				print("\nEmails crafted\n".format(len(emails.keys())))
 				for name, email in emails.items():
-					print email
+					print(email)
 
 		#export results
 		if args.html:
@@ -88,4 +89,4 @@ try:
 		if args.csv:
 			output("csv", args.csv, args.company, domain, employees, emails)
 except (KeyboardInterrupt, SystemExit):
-	print "\nTerminated script.\n"
+	print("\nTerminated script.\n")

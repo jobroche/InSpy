@@ -1,3 +1,4 @@
+from __future__ import print_function
 import BeautifulSoup, json
 
 def soupify(response):
@@ -7,7 +8,7 @@ def soupify(response):
     except (AttributeError, TypeError) as e:
         pass
     except Exception as e:
-        print "Error: {}".format(e)
+        print("Error: {}".format(e))
 
 def get_employees(soup):
     try:
@@ -21,5 +22,5 @@ def get_employees(soup):
     except (AttributeError, TypeError) as e:
         pass
     except Exception as e:
-        print "Error: {}".format(e)
+        print("Error: {}".format(e))
 
