@@ -77,6 +77,9 @@ try:
 				print "\nEmails crafted\n".format(len(emails.keys()))
 				for name, email in emails.items():
 					print email
+		else:
+			print("No employees found!")
+			exit(0)
 
 		#export results
 		if args.html:
