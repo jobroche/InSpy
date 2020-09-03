@@ -1,6 +1,6 @@
 
 import requests, random
-from logger import *
+import logging
 #requests.packages.urllib3.disable_warnings()
 
 def random_header():
