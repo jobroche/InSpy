@@ -1,4 +1,5 @@
-import BeautifulSoup, json
+import json
+from bs4 import BeautifulSoup
 
 def soupify(response):
     try:
@@ -7,7 +8,7 @@ def soupify(response):
     except (AttributeError, TypeError) as e:
         pass
     except Exception as e:
-        print "Error: {}".format(e)
+        print("Error: {}".format(e))
 
 def get_employees(soup):
     try:
@@ -21,5 +22,5 @@ def get_employees(soup):
     except (AttributeError, TypeError) as e:
         pass
     except Exception as e:
-        print "Error: {}".format(e)
+        print("Error: {}".format(e))
 
