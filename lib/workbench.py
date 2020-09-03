@@ -1,6 +1,7 @@
-import re, json, HTMLParser, unicodedata
-from http import *
-from logger import *
+import re, json,  unicodedata
+from html.parser import HTMLParser
+import logging
+from lib.http import http_request
 
 
 def get_domain(company): #Clearbit API - clearbit.com
