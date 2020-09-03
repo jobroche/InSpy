@@ -8,8 +8,13 @@ from lib.soup import *
 from lib.export import *
 from lib.logger import *
 
-
-parser = argparse.ArgumentParser(description='InSpy - A LinkedIn enumeration tool by Jonathan Broche (@LeapSecurity)', version="3.0.1")
+hunterapi = "" #insert hunterio api key here
+if not hunterapi:
+	print("[+] Your hunter api key is Empty")
+	print("[+] Hunter Api Key is required please fill the hunter api key opening the InSpy.py File")
+	exit()
+Version ="4.0"
+parser = argparse.ArgumentParser(description='InSpy - A LinkedIn enumeration tool by Jonathan Broche (@LeapSecurity)')
 parser.add_argument('company', help="Company name to use for tasks.")
 parser.add_argument('--domain', help="Company domain to use for searching.")
 parser.add_argument('--email', help="Email format to create email addresses with. [Accepted Formats: first.last@xyz.com, last.first@xyz.com, firstl@xyz.com, lfirst@xyz.com, flast@xyz.com, lastf@xyz.com, first@xyz.com, last@xyz.com]")
@@ -26,13 +31,13 @@ if len(sys.argv) == 1:
 
 args = parser.parse_args()
 start_logger(args.company)
-hunterapi = "" #insert hunterio api key here
+
 
 email = args.email
 domain = args.domain
 
 
-print("\nInSpy {}").format(parser.version)
+print("\nInSpy {}".format(Version))
 
 try:
 	if domain and not email: #search hunterio for email format
@@ -48,7 +53,7 @@ try:
 
 		email = email.replace("{", "").replace("}","")
 
-		print (\nDomain: {}, Email Format: {}\n").format(domain, email)
+		print("Domain: {}, Email Format: {}".format(domain, email))
 
 		employees = {}
 
@@ -58,15 +63,15 @@ try:
 					if args.company.lower() in title.lower():
 						if not name in employees:
 							employees[name] = title
-			print("\n{} Employees identified").format(len(employees.keys()))
+			print("{} Employees identified".format(len(employees.keys())))
 		else:
 			print(os.path.abspath(args.titles))
-			print("No such file or directory: '{}'").format(args.titles)
-
+			print("No such file or directory: '{}'".format(args.titles))
+		emails=[]
 		if employees:
 			#output employees
-			for name, title in employees.iteritems():
-				print("{} {}").format(name, title[:50].replace('&amp;', '&'))
+			for name, title in employees.items():
+				print("{} {}".format(name, title[:50].replace('&amp;', '&')))
 			
 			#craft emails
 			emails = create_emails(employees, domain, email)
@@ -74,7 +79,7 @@ try:
 
 			if emails:
 				#output emails
-				print("\nEmails crafted\n").format(len(emails.keys()))
+				print("Emails crafted".format(len(emails.keys())))
 				for name, email in emails.items():
 					print(email)
 
@@ -88,4 +93,4 @@ try:
 		if args.csv:
 			output("csv", args.csv, args.company, domain, employees, emails)
 except (KeyboardInterrupt, SystemExit):
-	print("\nTerminated script.\n")
+	print("Terminated script.")
