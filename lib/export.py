@@ -1,4 +1,5 @@
-import json, os, xml.dom.minidom, time, csv
+import json, os, time, csv
+import xml.dom.minidom
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 def output(format, file, company, domain, employees, emails):
@@ -17,14 +18,14 @@ def ocsv(filename, company, domain, employees, emails):
 		fieldnames = ["Employee Name", "Title", "Email"]
 		writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 		writer.writeheader()
-		for name, title in employees.iteritems():
+		for name, title in employees.items():
 			writer.writerow({"Employee Name": name, "Title": title.replace('&amp;', '&'), "Email": emails[name]})
 
 #JSON
 def ojson(file, company, domain, employees, emails):
 	employee_json = []
 
-	for name, title in employees.iteritems():
+	for name, title in employees.items():
 		employee_json.append({"name": name, "title": title.replace('&amp;', '&'), "email": emails[name]})
 
 	full_json = {
@@ -49,7 +50,7 @@ def oxml(file, company, domain, employees, emails):
 
 	echild = SubElement(top, 'Employees')
 
-	for name, title in employees.iteritems():
+	for name, title in employees.items():
 		
 		employee = SubElement(echild, "Employee")		
 		#name
@@ -71,7 +72,7 @@ def oxml(file, company, domain, employees, emails):
 def ohtml(file, company, domain, employees, emails):
 	employee_html = []
 
-	for name, title in employees.iteritems():
+	for name, title in employees.items():
 		employee_html.append("<tr><td>{name}</td><td>{title}</td><td>{email}</td></tr>".format(name=name, title=title, email=emails[name]))
 
 	page = """
