@@ -1,4 +1,5 @@
-import logging, sys, time
+
+import logging,time
 
 time_format = time.strftime("%Y-%m-%d %H:%M:%S")
 

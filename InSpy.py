@@ -2,19 +2,21 @@
 # Copyright (c) 2018 Jonathan Broche (@LeapSecurity)
 
 import argparse, sys, os
-from lib.http import *
 from lib.workbench import *
 from lib.soup import *
 from lib.export import *
 from lib.logger import *
 
-hunterapi = "" #insert hunterio api key here
+hunterapi = "305d56f8420e160b5fb20dc09dc87c00fddbccc5"                                      #insert hunterio api key here
+
 if not hunterapi:
 	print("[+] Your hunter api key is Empty")
 	print("[+] Hunter Api Key is required please fill the hunter api key opening the InSpy.py File")
-	exit()
+	sys.exit(404)
+
 Version ="4.0"
-parser = argparse.ArgumentParser(description='InSpy - A LinkedIn enumeration tool by Jonathan Broche (@LeapSecurity)')
+
+parser = argparse.ArgumentParser(description='InSpy - A LinkedIn enumeration tool by Hari Kiran(TheCyberMonster)\n A forked project of InSpy 3.0')
 parser.add_argument('company', help="Company name to use for tasks.")
 parser.add_argument('--domain', help="Company domain to use for searching.")
 parser.add_argument('--email', help="Email format to create email addresses with. [Accepted Formats: first.last@xyz.com, last.first@xyz.com, firstl@xyz.com, lfirst@xyz.com, flast@xyz.com, lastf@xyz.com, first@xyz.com, last@xyz.com]")
@@ -32,15 +34,13 @@ if len(sys.argv) == 1:
 args = parser.parse_args()
 start_logger(args.company)
 
-
 email = args.email
 domain = args.domain
-
 
 print("\nInSpy {}".format(Version))
 
 try:
-	if domain and not email: #search hunterio for email format
+	if domain and not email: #search hunter.io for email format
 		email = get_email_format(args.domain, hunterapi)
 	if email and not domain: #search clearbit for domain
 		domain = get_domain(args.company)	

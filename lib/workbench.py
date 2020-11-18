@@ -1,29 +1,27 @@
-import re, json,  unicodedata
+
 from html.parser import HTMLParser
 import logging
 from lib.http import http_request
 
-
-def get_domain(company): #Clearbit API - clearbit.com
+def get_domain(company):                #Clearbit API - clearbit.com
 
 	clearbit_request = "https://autocomplete.clearbit.com/v1/companies/suggest?query={}".format(company)
 	clearbit_results = []
 	domain = ""
 
 	r = http_request(clearbit_request)
-
 	if len(r["response"]) >=1:
-		for element in r["response"]:
-			if company.lower() == element['name'].lower():
-				clearbit_results.append({"name" : element['name'], "domain":element['domain']})
+		if len(r["response"]) >= 1:
+			for element in r["response"]:
+				clearbit_results.append({"name": element['name'], "domain": element['domain']})
 
-		if len(clearbit_results) == 1: #return domain if one result
+		if len(clearbit_results) == 1:                            #return domain if one result
 			domain = clearbit_results[0]["domain"]
-		elif len(clearbit_results) > 1: #prompt user if multiple domains identified
+		elif len(clearbit_results) > 1:                           #prompt user if multiple domains identified
 			print("Multiple domains identified for company. Which one is the target?")
 			for index, result in enumerate(clearbit_results):
-				print("{}) Name: {}, Domain: {}").format(index, result["name"], result["domain"])
-			choice = input()
+				print("{}) Name: {}, Domain: {}".format(index, result["name"], result["domain"]))
+			choice = int(input("Select using S.No \n (Ex: select-> 1 )\n select-> "))
 			domain = clearbit_results[choice]["domain"]
 
 	if domain:
@@ -40,7 +38,7 @@ def get_email_format(domain, apikey): #HunterIO API - hunter.io
 	r = http_request(hunter_request)
 
 	if r["status"] == 200:
-		for k,v in r["response"].iteritems():
+		for k,v in r["response"].items():
 			if k == 'data':
 				if v['pattern']:
 					emailformat = v['pattern']
@@ -75,6 +73,7 @@ def search_linkedin(company, file):
 
 
 #craft emails
+
 def create_emails(employees, domain, eformat):
 	hparser=HTMLParser.HTMLParser()
 	emails = {}
