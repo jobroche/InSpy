@@ -7,7 +7,7 @@ from lib.soup import *
 from lib.export import *
 from lib.logger import *
 
-hunterapi = "305d56f8420e160b5fb20dc09dc87c00fddbccc5"                                      #insert hunterio api key here
+hunterapi = ""                                      #insert hunterio api key here
 
 if not hunterapi:
 	print("[+] Your hunter api key is Empty")
