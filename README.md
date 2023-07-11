@@ -1,5 +1,7 @@
 # InSpy
 
+⛔ [DEPRECATED]. This repo is no longer being maintained.
+
 ## Introduction
 -----
 
