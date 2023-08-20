@@ -12,7 +12,7 @@ Version 3.0 introduces the automation of domain and email retrieval in addition 
 ## Installation
 -----
 
-Run `pip install -r requirements.txt` within the cloned InSpy directory.
+Run `pip3 install -r requirements.txt` within the cloned InSpy directory.
 
 Obtain an API key from [HunterIO](https://hunter.io/) and insert it into the hunterio variable within InSpy.py (line 29).
 

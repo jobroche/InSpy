@@ -1,35 +1,34 @@
-import re, json, HTMLParser, unicodedata
-from http import *
-from logger import *
 
+from html.parser import HTMLParser
+import logging
+from lib.http import http_request
 
-def get_domain(company): #Clearbit API - clearbit.com
+def get_domain(company):                #Clearbit API - clearbit.com
 
 	clearbit_request = "https://autocomplete.clearbit.com/v1/companies/suggest?query={}".format(company)
 	clearbit_results = []
 	domain = ""
 
 	r = http_request(clearbit_request)
-
 	if len(r["response"]) >=1:
-		for element in r["response"]:
-			if company.lower() == element['name'].lower():
-				clearbit_results.append({"name" : element['name'], "domain":element['domain']})
+		if len(r["response"]) >= 1:
+			for element in r["response"]:
+				clearbit_results.append({"name": element['name'], "domain": element['domain']})
 
-		if len(clearbit_results) == 1: #return domain if one result
+		if len(clearbit_results) == 1:                            #return domain if one result
 			domain = clearbit_results[0]["domain"]
-		elif len(clearbit_results) > 1: #prompt user if multiple domains identified
-			print "Multiple domains identified for company. Which one is the target?"
+		elif len(clearbit_results) > 1:                           #prompt user if multiple domains identified
+			print("Multiple domains identified for company. Which one is the target?")
 			for index, result in enumerate(clearbit_results):
-				print "{}) Name: {}, Domain: {}".format(index, result["name"], result["domain"])
-			choice = input()
+				print("{}) Name: {}, Domain: {}".format(index, result["name"], result["domain"]))
+			choice = int(input("Select using S.No \n (Ex: select-> 1 )\n select-> "))
 			domain = clearbit_results[choice]["domain"]
 
 	if domain:
 		return domain
 	else:
 		logging.error("Clearbit API - HTTP {} Error".format(r["status"]))
-		print "InSpy could not identify the domain name. Use --domain."
+		print("InSpy could not identify the domain name. Use --domain.")
 
 
 def get_email_format(domain, apikey): #HunterIO API - hunter.io
@@ -39,7 +38,7 @@ def get_email_format(domain, apikey): #HunterIO API - hunter.io
 	r = http_request(hunter_request)
 
 	if r["status"] == 200:
-		for k,v in r["response"].iteritems():
+		for k,v in r["response"].items():
 			if k == 'data':
 				if v['pattern']:
 					emailformat = v['pattern']
@@ -50,7 +49,7 @@ def get_email_format(domain, apikey): #HunterIO API - hunter.io
 	if emailformat:
 		return emailformat
 	else:
-		print "InSpy could not identify the email format. Use --email."
+		print("InSpy could not identify the email format. Use --email.")
 
 def search_linkedin(company, file):
 	titles = []
@@ -74,6 +73,7 @@ def search_linkedin(company, file):
 
 
 #craft emails
+
 def create_emails(employees, domain, eformat):
 	hparser=HTMLParser.HTMLParser()
 	emails = {}
@@ -113,4 +113,4 @@ def format_email(eformat, first, last):
 		}
 		return formats[eformat]
 	except Exception as e:
-		print e
+		print(e)
