@@ -22,7 +22,7 @@ def get_domain(company): #Clearbit API - clearbit.com
 			print "Multiple domains identified for company. Which one is the target?"
 			for index, result in enumerate(clearbit_results):
 				print "{}) Name: {}, Domain: {}".format(index, result["name"], result["domain"])
-			choice = input()
+			choice = int(input())
 			domain = clearbit_results[choice]["domain"]
 
 	if domain:
